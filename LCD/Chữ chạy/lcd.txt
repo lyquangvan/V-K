@@ -1,0 +1,3 @@
+Bai tap: Hieu ung chu chay tren LCD
+- An nut 1: Chu chay tu Phai sang Trai
+- An nut 2: Chu chay tu Trai sang Phai

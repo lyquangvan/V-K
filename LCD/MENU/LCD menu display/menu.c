@@ -1,0 +1,228 @@
+/*
+ * lcd.c
+ *
+ * Created: 25/09/2019 9:02:47 SA
+ * Author: quang van
+ */
+#include <mega128.h>
+#include <alcd.h>
+#include <io.h>
+#include <delay.h>
+#include <string.h>
+#include <stdio.h>
+int menu=1;
+int t=20;
+int t3=200;
+unsigned char i,a,chuoi[16];
+char chuoi[16] ="HELLO WORLD    ";
+void updatemenu(){
+     switch(menu)
+    {   
+        case 0:
+            menu=1;
+            break;
+        case 1:
+            lcd_clear();
+            lcd_gotoxy(0,0);
+            lcd_putsf(">Trai sang phai");
+            lcd_gotoxy(0,1);
+            lcd_putsf(" Phai sang trai");
+            break;
+        case 2:
+            lcd_clear();
+            lcd_gotoxy(0,0);
+            lcd_putsf(" Trai sang phai");
+            lcd_gotoxy(0,1);
+            lcd_putsf(">Phai sang trai");
+            break; 
+        case 3:
+            lcd_clear();
+            lcd_gotoxy(0,0);
+            lcd_putsf(">Scroll text   ");
+            lcd_gotoxy(0,1);
+            lcd_putsf(" Can giua      ");
+            break;
+        case 4:
+            lcd_clear();
+            lcd_gotoxy(0,0);
+            lcd_putsf(" Scroll text   ");
+            lcd_gotoxy(0,1);
+            lcd_putsf(">Can giua      ");
+            break; 
+        case 5:
+            menu=4;
+            break;       
+    }
+}
+void action1(){
+    lcd_clear();
+    while(1)
+        {      
+            a=chuoi[14];
+            for(i=14;i>=1;i--)
+            {   
+                lcd_gotoxy(i,0);
+                lcd_putchar(chuoi[i]);
+                chuoi[i]=chuoi[i-1];
+                delay_ms(t);     
+            }                 
+            chuoi[0]=a;       
+            if(!PIND.4)
+            {         
+                lcd_clear();
+                break;   
+            }
+        } 
+}
+void action2(){
+    lcd_clear();
+    while(1)
+    {            
+        a=chuoi[0];
+        for(i=0;i<15;i++)
+        {   
+            lcd_gotoxy(i,0);
+            lcd_putchar(chuoi[i]);
+            chuoi[i]=chuoi[i+1];
+            delay_ms(t);      
+        }
+        chuoi[14]=a;
+        if(!PIND.4)
+        {
+            break;
+        }
+    }
+}
+void action3(){
+    int n=0;
+    lcd_clear();
+    do
+    {
+    for(i=0;i<15;i++)
+    {        
+        lcd_clear();
+        lcd_gotoxy(i,0);
+        lcd_putsf("HELLO WORLD    ");
+        delay_ms(t3);
+        if(!PIND.4)
+        {
+            n++;
+            break;
+        } 
+    }
+    if(n==1)
+    {
+        break;
+    }
+    for(i=0;i<15;i++)
+    {        
+        lcd_clear();
+        lcd_gotoxy(i,1);
+        lcd_putsf("HELLO WORLD    ");
+        delay_ms(t3);
+        if(!PIND.4)
+        {
+            n++;
+            break;
+        }  
+    }
+    if(n==1)
+    {
+        break;
+    }
+    for(i=15;i>0;i--)
+    {        
+        lcd_clear();
+        lcd_gotoxy(i,1);
+        lcd_putsf("HELLO WORLD    ");
+        delay_ms(t3);
+        if(!PIND.4)
+        {
+            n++;
+            break;
+        }  
+    }
+    if(n==1)
+    {
+        break;
+    }
+    for(i=15;i>0;i--)
+    {        
+        lcd_clear();
+        lcd_gotoxy(i,0);
+        lcd_putsf("HELLO WORLD    ");
+        delay_ms(t3);
+        if(!PIND.4)
+        {
+            n++;
+            break;
+        } 
+    }
+    if(n==1)
+    {
+        break;
+    } 
+    }
+    while(PIND.4); 
+}
+void action4(){
+    lcd_clear();
+    do
+    {
+    lcd_gotoxy(0,0);
+    lcd_putsf("  HELLO WORLD  ");
+    }
+    while(PIND.4);
+}
+void action(){
+     switch(menu)
+    {   
+        case 1:
+            action1();
+            break;
+        case 2:
+            action2();
+            break; 
+        case 3:
+            action3();
+            break;
+        case 4:
+            action4();
+            break;       
+    }
+}
+void main(void)
+{
+lcd_init(16);
+DDRD.2=0x00;
+PORTD.2=0xff;
+DDRD.3=0x00;
+PORTD.3=0xff;
+DDRD.4=0x00;
+PORTD.4=0xff;
+DDRD.5=0x00;
+PORTD.5=0xff;
+while(1)
+    {
+    updatemenu();
+    if(!PIND.5)
+    {   
+        menu++;
+        updatemenu();
+        delay_ms(100);
+    }
+    if(!PIND.3)
+    {
+        menu--;
+        updatemenu();
+        delay_ms(100);
+    }
+    if(!PIND.2)
+    {
+        action();
+    }     
+}
+}
+
+
+

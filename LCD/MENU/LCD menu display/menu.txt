@@ -1,0 +1,9 @@
+Bai tap: Hien thi MENU tren LCD
+- Tung dong la tung lua chon hieu ung cho "HELLO WORLD"
+- An cong tac 1 de di chuyen lua chon len tren
+- An cong tac 2 de di chuyen lua chon xuong duoi
+- An cong tac 3 de chon hieu ung
++ Hieu ung 1: Chu chay tu Trai sang Phai
++ Hieu ung 2: Chu chay tu Phai sang Trai
++ Hieu ung 3: Chu chay tu Trai sang phai, xuong dong va sau do quay lai tu Phai sang Trai
+- An cong tac 4 de quay ve MENU 

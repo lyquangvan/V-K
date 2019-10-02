@@ -1,0 +1,11 @@
+VERSION:3 SOURCE_TIMESTAMP:4F4180CF
+NODE:I LEVEL:0 LINE:7 "E:\cvar\inc\mega128.h"
+NODE:I LEVEL:0 LINE:8 "E:\cvar\inc\alcd.h"
+NODE:I LEVEL:0 LINE:9 "E:\cvar\inc\io.h"
+NODE:I LEVEL:0 LINE:10 "E:\cvar\inc\delay.h"
+NODE:I LEVEL:0 LINE:11 "E:\cvar\inc\string.h"
+NODE:I LEVEL:0 LINE:12 "E:\cvar\inc\stdio.h"
+NODE:V LEVEL:0 LINE:13 "i -> R5"
+NODE:V LEVEL:0 LINE:13 "a -> R4"
+NODE:V LEVEL:0 LINE:13 "b -> R7"
+NODE:F LEVEL:0 LINE:15 "main(void)"

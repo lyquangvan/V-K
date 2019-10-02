@@ -1,0 +1,39 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+chuoi                                                                             0x0500      16
+_base_y                                                                           0x0510       4
+_lcd_maxx                                                                         0x0514       1
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+menu                                                                              R4,R5        2
+t                                                                                 R6,R7        2
+t3                                                                                R8,R9        2
+i                                                                                 R11          1
+a                                                                                 R10          1
+_lcd_x                                                                            R13          1
+_lcd_y                                                                            R12          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+updatemenu                                                                        0x000E5     70
+action1                                                                           0x0012B     28
+action2                                                                           0x00147     24
+action3                                                                           0x0015F     76
+action4                                                                           0x001AB     11
+action                                                                            0x001B6     25
+main                                                                              0x001CF     27
+_lcd_write_nibble_G100                                                            0x001EA     37
+_lcd_write_data                                                                   0x0020F     12
+lcd_gotoxy                                                                        0x0021B     13
+lcd_clear                                                                         0x00228     12
+lcd_putchar                                                                       0x00234     23
+lcd_putsf                                                                         0x0024B     19
+lcd_init                                                                          0x0025E     48

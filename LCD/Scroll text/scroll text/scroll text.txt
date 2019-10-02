@@ -1,0 +1,4 @@
+Bai tap: Hieu ung Scroll text tren LCD
+- Chu chay tu Trai sang Phai
+- Xuong dong
+- Sau do quay lai theo huong tu Phai sang Trai
