@@ -1,0 +1,54 @@
+/*
+ * button1.c
+ *
+ * Created: 18/09/2019 9:00:36 SA
+ * Author: quang van
+ */
+
+#include <mega128.h>
+#include <delay.h>
+#include <io.h>
+unsigned char count,temp,i;
+void main(void)
+{
+DDRE.5=0xff;
+DDRD.4=0x00;
+PORTD.4=0xff;
+PORTE.5=1;
+count=0;
+while (1)
+{
+    if(!PIND.4)
+    {   
+        count++;
+        while(!PIND.4)
+        delay_ms(100);          
+        {
+        i=count%4;           
+        if(i==1)
+        {
+            PORTE.5=0;
+        }
+        if(i==2)
+        {
+            PORTE.5=1;
+        }
+        if(i==3)
+        {
+            temp=0;
+            do
+            {
+                PORTE=temp;
+                delay_ms(10);
+                temp++;
+            }
+            while(PIND.4);
+        }
+        if(i==0)
+        {
+            PORTE.5=1;    
+        }
+        }    
+    }                 
+}
+}

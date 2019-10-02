@@ -1,0 +1,6 @@
+Bai tap: Su dung 1 button nhieu cong dung (Su dung nut 4)
+- An nut lan 1 LED sang
+- An nut lan 2 LED tat
+- An nut lan 3 LED nhap nhay
+- An nut lan 4 LED tat
+- An nut lan 5 cong dung quay tro ve nhu lan thu 1
