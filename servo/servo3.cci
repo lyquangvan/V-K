@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:4F4958B4
+NODE:I LEVEL:0 LINE:24 "E:\cvar\inc\mega128.h"
+NODE:I LEVEL:0 LINE:25 "E:\cvar\inc\delay.h"
+NODE:I LEVEL:0 LINE:26 "E:\cvar\inc\alcd.h"
+NODE:V LEVEL:0 LINE:31 "RC -> R4,R5"
+NODE:V LEVEL:0 LINE:31 "dem -> R6,R7"
+NODE:V LEVEL:0 LINE:32 "chuoi -> RAM:????"
+NODE:F LEVEL:0 LINE:33 "timer0_ovf_isr(void)"
+NODE:F LEVEL:0 LINE:52 "main(void)"
